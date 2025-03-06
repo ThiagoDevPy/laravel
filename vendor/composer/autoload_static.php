@@ -516,10 +516,19 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
     );
 
     public static $classMap = array (
+        'App\\Http\\Controllers\\Alquileres' => __DIR__ . '/../..' . '/app/Http/Controllers/Alquileres.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Controllers/Dashboard.php',
+        'App\\Http\\Controllers\\Personas' => __DIR__ . '/../..' . '/app/Http/Controllers/Personas.php',
+        'App\\Http\\Controllers\\UsuarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsuarioController.php',
+        'App\\Http\\Controllers\\Ventas' => __DIR__ . '/../..' . '/app/Http/Controllers/Ventas.php',
+        'App\\Models\\Alquiler' => __DIR__ . '/../..' . '/app/Models/Alquiler.php',
+        'App\\Models\\EstadoCivil' => __DIR__ . '/../..' . '/app/Models/EstadoCivil.php',
+        'App\\Models\\Persona' => __DIR__ . '/../..' . '/app/Models/Persona.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Usuario' => __DIR__ . '/../..' . '/app/Models/Usuario.php',
+        'App\\Models\\Venta' => __DIR__ . '/../..' . '/app/Models/Venta.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
