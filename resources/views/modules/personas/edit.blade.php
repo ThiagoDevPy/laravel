@@ -1,0 +1,84 @@
+@extends('layouts.main')
+
+@section('titulo', $titulo)
+
+@section('contenido')
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>Eliminar Categoría</h1>
+
+        </div><!-- End Page Title -->
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">¿Estas seguro de eliminar esta persona?</h5>
+
+                            <form action="{{ route('personas.update', $item->id) }}" method="POST">
+                                @csrf
+                                @method("PUT")
+                                <div class="mb-3">
+                                    <label for="nombre_persona" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre_persona"
+                                        value="{{ $item->nombre_persona }}" name="nombre_persona">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="apellido_persona" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="apellido_persona"
+                                        value="{{ $item->apellido_persona }}" name="apellido_persona">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="ci_persona" class="form-label">N° de documento</label>
+                                    <input type="number" class="form-control" id="ci_persona" name="ci_persona" value="{{ $item->ci_persona }}"> 
+                                 
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="ci_persona" class="form-label">Teléfono</label>
+                                    <input type="number" class="form-control" id="telefono_persona" value="{{ $item->telefono_persona }}"
+                                        name="telefono_persona"> 
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="direccion_persona" class="form-label">Direcciónn</label>
+                                    <input type="text" class="form-control" id="direccion_persona"value="{{ $item->direccion_persona }}"
+                                        name="direccion_persona"> 
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="sexo" class="form-label">Sexo</label>
+                                    <select name="sexo_persona" id="sexo_persona" class="form-control" aria-placeholder="{{ $item->sexo_persona }}">
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="estado_civil_id" class="form-label">Estado Civil</label>
+                                    <select name="id_est_civl" id="id_est_civl" class="form-control" aria-placeholder=" {{ $item->estadoCivil->nombre_est_civil }}">
+                                       
+                                        @foreach ($estadosCiviles as $estadoCivil)
+                                            <option value="{{ $estadoCivil->id }}">{{ $estadoCivil->nombre_est_civil }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <button class="btn btn-warning mt-3">Actualizar</button>
+                                <a href="{{ route('personas') }}" class="btn btn-info mt-3">
+                                    Cancelar
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+@endsection
